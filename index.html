@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>データサイエンス方眼帳</title>
+<meta name="description" content="AI時代のコンサルタントのためのデータサイエンス学習サイト。動く図で、問いの立て方から結果の疑い方、AIへの任せ方までを学ぶ。">
+<meta name="ds-page" content="home">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+  <section class="hero wrap">
+    <div class="hero__grid">
+      <div>
+        <h1><span class="hero__line">データは、</span><span class="hero__line">問いを持つ人の</span><span class="hero__line">武器になる。</span></h1>
+        <p class="lead">AIが計算を引き受ける時代に、コンサルタントが持つべきデータサイエンスの土台を、動く図で身につける学習帳です。問いの立て方から、結果の疑い方、AIへの任せ方までを8つのモジュールで学びます。</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="modules/m1.html">モジュール1から始める</a>
+          <a class="btn" href="insight.html">どこまで必要かを読む</a>
+        </div>
+        <div class="hero__meta">
+          <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>8モジュール・約6時間</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>動かして学べる図 40点以上</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg>数式なし・未経験から</span>
+        </div>
+      </div>
+      <div class="hero-viz" data-widget="hero">
+        <div class="hero-viz__stage"></div>
+        <p class="hero-viz__caption" aria-live="polite"></p>
+        <div class="stepper" role="group" aria-label="データが意思決定になるまでの段階"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="levels">
+    <div class="section__head">
+      <h2>コンサルが目指すのは「つくる人」ではなく「推進役」の水準</h2>
+      <p>国内外の調査を読み解いた結論です。全員に必要なのはL1のリテラシー。データやAIの案件に関わるならL2まで。モデルを自分でつくるL3は、専門家と協働できれば十分です。このサイトはL2を到達目標にしています。</p>
+    </div>
+    <div class="ruler">
+      <div class="ruler__scale">
+        <div class="ruler__cell">
+          <h3><span class="level level--1"><i><b></b><b></b><b></b></i>L1</span>全コンサル必須</h3>
+          <p>データとAIの言葉がわかり、分析結果やAIの出力を鵜呑みにしない。</p>
+          <ul>
+            <li>平均・相関・因果を取り違えない</li>
+            <li>生成AIの得意・不得意を知り、検証してから使う</li>
+            <li>データとAIのリスクに気づける</li>
+          </ul>
+        </div>
+        <div class="ruler__cell is-target">
+          <h3><span class="level level--2"><i><b></b><b></b><b></b></i>L2</span>推進役（トランスレーター）</h3>
+          <span class="ruler__target"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>このサイトの到達目標</span>
+          <p>ビジネス課題を分析課題に翻訳し、専門家とAIを動かして成果まで導く。</p>
+          <ul>
+            <li>手法の向き不向きと評価指標で判断できる</li>
+            <li>価値を金額で語り、テーマに優先順位をつける</li>
+            <li>PoCから運用、ガバナンスまで設計できる</li>
+          </ul>
+        </div>
+        <div class="ruler__cell">
+          <h3><span class="level level--3"><i><b></b><b></b><b></b></i>L3</span>専門（実装者）</h3>
+          <p>モデルやデータ基盤を自ら設計・実装する。コンサル全員には不要で、協働相手として理解しておく。</p>
+          <ul>
+            <li>Python・SQLで分析と実装ができる</li>
+            <li>モデルの改善と運用を担える</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ruler__ticks"><span>用語を知る</span><span>説明できる</span><span>判断できる</span><span>自分でつくれる</span></div>
+    </div>
+    <p style="margin-top:20px"><a href="insight.html">調査データと考察をくわしく読む</a></p>
+  </section>
+
+  <section class="section wrap" id="roadmap">
+    <div class="section__head">
+      <h2>学習ロードマップ</h2>
+      <p>1から順に進むと、地図を手に入れ、データと統計で考え、機械学習と生成AIのしくみを知り、ビジネスとプロジェクトに活かし、最後にリスクを押さえる流れになります。仕上げのケーススタディで全体をつなげます。</p>
+    </div>
+    <div class="roadmap" data-roadmap></div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section__head">
+      <h2>このサイトの読み方</h2>
+    </div>
+    <div class="howto">
+      <div class="howto__item">
+        <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+        <h3>図を動かして理解する</h3>
+        <p>ほぼすべてのレッスンに、ボタンやスライダーで動かせる図があります。数式の代わりに、点の動きで仕組みをつかんでください。</p>
+      </div>
+      <div class="howto__item">
+        <svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>
+        <h3 class="hand">手書きは「現場の視点」</h3>
+        <p>手書き風の文字は、人の判断やコンサルの現場でのコツを表します。データやAIの話は活字、人の話は手書きという使い分けです。</p>
+      </div>
+      <div class="howto__item">
+        <svg class="icon" aria-hidden="true"><use href="#i-ruler"/></svg>
+        <h3>必要水準のマーク</h3>
+        <p>各レッスンにL1（全員必須）かL2（推進役）の印があります。時間がなければL1だけを先に一周するのも有効です。</p>
+      </div>
+      <div class="howto__item">
+        <svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>
+        <h3>完了と確認テスト</h3>
+        <p>レッスンの最後で「完了」を押すと進捗に記録されます。モジュールの最後には4問の確認テストがあります。記録はこのブラウザにだけ保存されます。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+<div data-site-footer></div>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/curriculum.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/viz-foundations.js"></script>
+</body>
+</html>

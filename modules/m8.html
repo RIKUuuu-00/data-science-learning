@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>リスクと信頼｜データサイエンス方眼帳</title>
+<meta name="ds-root" content="../">
+<meta name="ds-page" content="modules">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+<section class="mod-hero">
+  <div class="wrap mod-hero__grid">
+    <div class="mod-hero__no" aria-hidden="true">8</div>
+    <div>
+      <p class="mod-hero__crumb"><a href="../index.html#roadmap">学習ロードマップ</a><span>/</span><span>モジュール8</span></p>
+      <h1>リスクと信頼</h1>
+      <p class="lead">データとAIの失敗は、企業の信頼を一瞬で損なうことがあります。偏り、説明責任、結果の読み違い、生成AI特有のリスク、そして国内外のルール。コンサルが最後の砦になるための知識です。</p>
+      <div class="mod-hero__facts">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>5レッスン</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約40分</span>
+      </div>
+      <div class="outcomes">
+        <h2>このモジュールでできるようになること</h2>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>データの偏りがAIの判断に与える影響を説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>予測の理由を説明する方法と、その限界を理解する</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>分析結果を疑う視点を持ち、レビューで指摘できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>生成AI特有のリスクと対策を説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>日本とEUのルールの大枠を説明できる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap mod-layout">
+  <nav class="toc" data-toc aria-label="目次"></nav>
+  <div>
+
+    <section class="lesson" id="l8-1" data-lesson="8-1" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">8-1</span><h2>データの偏りはAIの偏りになる</h2></div>
+      <p class="lesson__key"><span>AIは過去のデータを学ぶ。過去が偏っていれば、その偏りを効率よく再生産する。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>採用、与信、人事評価などで過去の判断を学習データにすると、その判断に含まれていた偏りもモデルに引き継がれます。図で「偏りを補正する」を押して、推薦結果の変化を見てください。</p>
+          <p>性別の項目を削除しても、性別と強く結びつく<span class="term">代理変数</span>（出身校、趣味、言葉づかいなど）から偏りが入り込みます。</p>
+          <p>対策は、学習データの点検と補正、結果の公平性の測定、人によるチェック、そして使いながらのモニタリングです。完全な公平はないので、<strong>どの公平性を重視するかを決めて説明できる</strong>ことが大切です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>人に関わる予測（採用・与信・評価）は、<b>企画段階で法務とリスク管理を呼ぶ</b>。EUでは高リスクAIに分類される用途でもある。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="bias" data-title="偏ったデータから学ぶAI" data-icon="scale"></figure>
+    </section>
+
+    <section class="lesson" id="l8-2" data-lesson="8-2" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">8-2</span><h2>説明できるAI</h2></div>
+      <p class="lesson__key"><span>予測の内訳が見えると、信頼でき、打ち手も具体的になる。ただし内訳は因果ではない。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>精度の高いモデルほど、判断の理由が見えにくくなります（ブラックボックス）。そこで、予測を要因ごとの寄与に分解する<span class="term">SHAP</span>などの手法が使われます。</p>
+          <p>図は会員ごとの退会確率の内訳です。同じ「退会リスクが高い」でも、理由が違えば打ち手も違います。</p>
+          <p>注意したいのは、寄与は「モデルがどの情報を重く見たか」であって、因果関係ではないこと。「来館回数を増やせば必ず退会が減る」とまでは言えません。打ち手の効果は実験で確かめます。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>現場に予測を渡すときは、<b>スコアだけでなく「主な理由」を3つ添える</b>。理由のない数字は使われない。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="shap" data-title="予測の内訳（SHAPのイメージ）" data-icon="chart-bar"></figure>
+    </section>
+
+    <section class="lesson" id="l8-3" data-lesson="8-3" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">8-3</span><h2>分析結果を疑う8つの視点</h2></div>
+      <p class="lesson__key"><span>正しい手順で出た数字でも、読み方を誤れば間違った結論になる。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>図は<strong>シンプソンのパラドックス</strong>の例です。全体ではチームXが優秀に見えますが、顧客タイプ別に見るとYのほうが上回ります。比べている集団の構成が違うと、こうした逆転が起きます。</p>
+          <p>分析結果やAIの出力をレビューするときは、次の8つの視点を当ててください。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>レビューでは<b>「この結論が間違っているとしたら、どこが原因か？」</b>と自問する。反証を探すのが一番速い検証法。</p>
+        </aside>
+      </div>
+      <div class="grid-cards" style="margin-top:20px;max-width:920px">
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>サンプルの大きさ</h4><p>何人中の結果か。少ないと偶然のぶれが大きい。</p></div>
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-funnel"/></svg>選択バイアス</h4><p>誰のデータか。偏った集団だけを見ていないか。</p></div>
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg>生存者バイアス</h4><p>失敗した事業や辞めた顧客が、データから抜けていないか。</p></div>
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-scatter"/></svg>相関と因果</h4><p>第三の要因や、逆向きの因果はないか。</p></div>
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-split"/></svg>内訳での逆転</h4><p>セグメント別に見ても同じ結論になるか。</p></div>
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg>データリーク</h4><p>予測の時点では知りえない情報が、学習に混ざっていないか。</p></div>
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-ruler"/></svg>外挿</h4><p>学習したデータの範囲外を予測していないか。</p></div>
+        <div class="mini"><h4><svg class="icon" aria-hidden="true"><use href="#i-dice"/></svg>多重比較</h4><p>たくさん試した中の「当たり」だけを見ていないか。</p></div>
+      </div>
+      <figure class="fig" data-widget="simpson" data-title="全体と内訳で逆転する" data-icon="split"></figure>
+    </section>
+
+    <section class="lesson" id="l8-4" data-lesson="8-4" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">8-4</span><h2>生成AI特有のリスク</h2></div>
+      <p class="lesson__key"><span>情報漏えい、誤情報、権利侵害、隠された指示。便利さと同じだけ、リスクも身近にある。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>生成AIは誰でもすぐに使えるぶん、リスクも現場の一人ひとりの手元にあります。代表的な5つのリスクと対策を押さえます。</p>
+          <p>2025年には、大手ファームがオーストラリア政府向けに作成した報告書に、AIが生成したとみられる架空の引用や判決文の誤りが見つかり、報酬の一部を返金しました。修正版では生成AIの使用が開示されました。コンサルの成果物にとって、検証は品質そのものです。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>成果物の最終確認では、<b>「この数字・引用・固有名詞は、原典を自分の目で見たか」</b>を1つずつ確かめる。</p>
+        </aside>
+      </div>
+      <div class="grid-cards" style="margin-top:20px;max-width:920px">
+        <div class="mini mini--bn"><h4><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>情報漏えい</h4><p>機密情報や個人情報を、入力内容が学習に使われる設定のサービスに入れてしまう。</p><p><span class="tag tag--wk">対策</span> 使ってよいサービスと入力してよい情報の範囲を決め、法人向けの契約と設定を確認する。</p></div>
+        <div class="mini mini--bn"><h4><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>誤情報</h4><p>もっともらしい誤りが、そのまま資料や判断に入り込む。</p><p><span class="tag tag--wk">対策</span> 原典の確認を手順に組み込む。AIを使った箇所を記録する。</p></div>
+        <div class="mini mini--bn"><h4><svg class="icon" aria-hidden="true"><use href="#i-copyright"/></svg>権利侵害</h4><p>生成物が既存の著作物に似る。他者の素材を無断で入力する。</p><p><span class="tag tag--wk">対策</span> 利用規約を確認し、公開前に類似性をチェックする。</p></div>
+        <div class="mini mini--bn"><h4><svg class="icon" aria-hidden="true"><use href="#i-syringe"/></svg>隠された指示</h4><p>読み込ませた文書やWebページに仕込まれた指示で、AIが意図しない動作をする（プロンプトインジェクション）。</p><p><span class="tag tag--wk">対策</span> エージェントには最小限の権限だけを与え、重要な操作は人が承認する。</p></div>
+        <div class="mini mini--bn"><h4><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg>考えなくなる</h4><p>出力を確かめずに使い続け、判断力が育たない、あるいは衰える。</p><p><span class="tag tag--wk">対策</span> まず自分で考えてからAIに聞く。レビューの責任者を明確にする。</p></div>
+      </div>
+    </section>
+
+    <section class="lesson" id="l8-5" data-lesson="8-5" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">8-5</span><h2>ルールと規制の地図</h2></div>
+      <p class="lesson__key"><span>日本は推進型の法律とガイドライン、EUはリスクに応じた規制。どちらもクライアントの戦略に影響する。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>日本では2025年5月に<strong>AI推進法</strong>（人工知能関連技術の研究開発及び活用の推進に関する法律）が成立し、同年9月に全面施行されました。罰則のない推進型の法律で、同年12月にはAI基本計画が閣議決定されています。</p>
+          <p>実務の拠り所は、総務省と経済産業省の<strong>AI事業者ガイドライン</strong>です。AIを開発・提供・利用する事業者の取り組みを示したもので、2024年4月の第1.0版以降、更新が続いています。データの扱いでは<strong>個人情報保護法</strong>が基本です。</p>
+          <p>EUの<strong>AI法</strong>は、リスクの大きさに応じて義務を変える規制です。2024年8月に発効し、段階的に適用されています。高リスクAIの義務は、2026年のデジタル・オムニバス改正で2027年12月（製品に組み込まれるものは2028年8月）に延期されました。</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>時期</th><th>日本</th><th>EU</th></tr></thead>
+              <tbody>
+                <tr><td class="num">2024年4月</td><td>AI事業者ガイドライン 第1.0版</td><td></td></tr>
+                <tr><td class="num">2024年8月</td><td></td><td>AI法が発効</td></tr>
+                <tr><td class="num">2025年2月</td><td></td><td>禁止されるAIの規定が適用</td></tr>
+                <tr><td class="num">2025年3月</td><td>AI事業者ガイドライン 第1.1版</td><td></td></tr>
+                <tr><td class="num">2025年5月</td><td>AI推進法が成立</td><td></td></tr>
+                <tr><td class="num">2025年8月</td><td></td><td>汎用目的AIモデルの義務が適用</td></tr>
+                <tr><td class="num">2025年9月</td><td>AI推進法が全面施行</td><td></td></tr>
+                <tr><td class="num">2025年12月</td><td>AI基本計画が閣議決定</td><td></td></tr>
+                <tr><td class="num">2026年8月</td><td></td><td>透明性の義務（AI生成物の表示など）が適用</td></tr>
+                <tr><td class="num">2027年12月</td><td></td><td>高リスクAI（採用・与信など）の義務が適用</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>規制は変わり続ける。<b>日付と条文は必ず最新の一次情報で確認</b>し、資料には確認した日付を書く。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="eu-pyramid" data-title="EU AI法のリスク区分" data-icon="scale"></figure>
+    </section>
+
+    <section id="summary" data-toc-extra data-toc-title="まとめと確認テスト">
+      <div class="summary-box">
+        <h3>モジュール8のまとめ</h3>
+        <ul>
+          <li>偏ったデータは偏ったAIを生む。代理変数にも注意する。</li>
+          <li>予測の内訳は打ち手を具体的にするが、因果ではない。</li>
+          <li>結果をレビューするときは8つの視点を当てる。</li>
+          <li>生成AIの成果物は、原典の確認までが仕事。</li>
+          <li>日本は推進型、EUはリスクに応じた規制。日付は一次情報で確認する。</li>
+        </ul>
+      </div>
+      <h2 class="section__head" style="margin-top:40px;font-size:var(--step-2);font-weight:900">確認テスト</h2>
+      <div class="quiz" data-quiz="m8"><script type="application/json">[
+        {"q":"採用AIの学習データから「性別」の項目を削除した。これで偏りは解消されるか。","o":["はい、完全に解消される","いいえ、性別と結びつく代理変数から偏りが入り込みうる","性別はそもそも予測に影響しない","削除すると精度が上がるので問題ない"],"a":1,"exp":"出身校や言葉づかいなど、性別と強く結びつく項目からも偏りは学習されます。結果の公平性を測り、監視し続ける必要があります。"},
+        {"q":"全体ではチームXの成約率が高いが、顧客タイプ別に見るとどちらもYが高い。この現象を何と呼ぶか。","o":["過学習","シンプソンのパラドックス","外挿","ハルシネーション"],"a":1,"exp":"比べている集団の構成が違うと、全体と内訳で結論が逆転することがあります。"},
+        {"q":"読み込ませたWebページに隠された指示によって、AIが意図しない動作をするリスクはどれか。","o":["プロンプトインジェクション","ドリフト","過学習","交絡"],"a":0,"exp":"エージェントに大きな権限を与えるほど影響が大きくなります。最小権限と人の承認で備えます。"},
+        {"q":"日本のAI推進法の性格として正しいものはどれか。","o":["違反に重い罰金がある規制法","研究開発と活用の推進を目的とした、罰則のない法律","EUのAI法と同じ内容","生成AIの業務利用を禁止する法律"],"a":1,"exp":"AI推進法は推進型の法律で、実務の取り組みはAI事業者ガイドラインなどが拠り所になります。"}
+      ]</script></div>
+    </section>
+    <nav class="pager" data-pager="m8" aria-label="モジュールの移動"></nav>
+  </div>
+</div>
+</main>
+<div data-site-footer></div>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/curriculum.js"></script>
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/viz-foundations.js"></script>
+<script src="../assets/js/viz-ml.js"></script>
+<script src="../assets/js/viz-business.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ケーススタディ：退会を減らせ｜データサイエンス方眼帳</title>
+<meta name="ds-page" content="case">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+  <section class="mod-hero">
+    <div class="wrap mod-hero__grid">
+      <div class="mod-hero__no" aria-hidden="true" style="color:var(--yamabuki)">★</div>
+      <div>
+        <p class="mod-hero__crumb"><a href="index.html#roadmap">学習ロードマップ</a><span>/</span><span>ケーススタディ</span></p>
+        <h1>退会を減らせ</h1>
+        <p class="lead">舞台は首都圏で12店舗を運営する架空のフィットネスチェーン「ミライフィット」（会員約1万人）。依頼の一言から、問いの再定義、データの棚卸し、予測モデル、実験、価値の試算、運用までを、コンサルの立場で一気通貫に体験します。各ステップの問いに答えながら進んでください。</p>
+        <div class="mod-hero__facts">
+          <span><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg>7ステップ</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約30分</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>登場する企業と数字はすべて架空です</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap case-steps">
+
+    <section class="case-step" id="s1">
+      <span class="case-step__no">1</span>
+      <div>
+        <h2>依頼を受ける</h2>
+        <div class="dialog">
+          <div class="say"><span class="say__who">部長</span><p class="say__text"><small>ミライフィット 事業部長</small>最近、会員の退会が増えていてね。他社もAIで退会を予測しているらしい。うちもAIで退会予測をやりたいんだ。データは全部出すから。</p></div>
+        </div>
+        <div class="choice" data-widget="choice"><script type="application/json">{"q":"あなたの最初の一言として、最も適切なのはどれか。","o":[
+          {"t":"「承知しました。データをいただければ、すぐに予測モデルを作ります」","ok":false,"fb":"目的と使い道が決まらないまま作ると、精度は高いのに誰も使わないモデルになりがちです（1-1、7-1）。"},
+          {"t":"「予測ができたとして、その結果で誰が何をしますか？」","ok":true,"fb":"予測は手段です。結果を使う人と行動が決まれば、何を・いつ・どの精度で予測すべきかが決まります。"},
+          {"t":"「最新の深層学習を使えば、他社より高い精度が出せます」","ok":false,"fb":"手法の話は最後です。会員データのような表形式データなら、深層学習が最適とも限りません（4-7）。"}
+        ]}</script></div>
+        <div class="dialog">
+          <div class="say say--you"><span class="say__who">あなた</span><p class="say__text"><small>あなた</small>予測ができたとして、その結果で、誰が何をしますか？</p></div>
+          <div class="say"><span class="say__who">部長</span><p class="say__text"><small>事業部長</small>…店舗のスタッフが声をかける、かな。正直、そこまで考えていなかった。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-step" id="s2">
+      <span class="case-step__no">2</span>
+      <div>
+        <h2>問いを翻訳する</h2>
+        <div class="prose">
+          <p>月間の退会率は1年で1.2%から1.9%に上がり、売上を押し下げています。ヒアリングの結果を、翻訳シートにまとめました。</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <tbody>
+                <tr><th>ビジネス課題</th><td>退会率が1.2%から1.9%に上昇し、年間売上が約4%減少</td></tr>
+                <tr><th>問い</th><td>誰が、なぜ、いつ辞めるのか。そのうち防げる退会はどれか</td></tr>
+                <tr><th>仮説</th><td>入会して半年以内に来館が途切れた会員が辞めやすい。混雑する店舗ほど退会が多い</td></tr>
+                <tr><th>分析課題</th><td>①退会の前兆を特定する（診断）②30日以内に退会しそうな会員を予測する（分類）</td></tr>
+                <tr><th>必要なデータ</th><td>会員情報、入退館ログ、決済、問い合わせ履歴、退会理由アンケート</td></tr>
+                <tr><th>アウトプット</th><td>毎週月曜、店舗ごとの退会リスク上位の会員リストと、主な理由3つ</td></tr>
+                <tr><th>アクション</th><td>店舗スタッフが声をかけ、プラン変更やパーソナル指導の体験を提案する</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="fig__note">関連：<a href="modules/m7.html#l7-1">7-1 ビジネス課題を分析課題に翻訳する</a>、<a href="modules/m4.html#l4-3">4-3 回帰と分類</a></p>
+      </div>
+    </section>
+
+    <section class="case-step" id="s3">
+      <span class="case-step__no">3</span>
+      <div>
+        <h2>データを棚卸しする</h2>
+        <div class="prose">
+          <p>データを集めてみると、問題がいくつも見つかりました。</p>
+          <ul>
+            <li>入退館ログは店舗ごとにシステムが違い、3店舗は2年分しか残っていない。</li>
+            <li>退会理由アンケートは自由記述で、5,000件が集計されないまま眠っている。</li>
+            <li>「休会」を退会として数える店舗と、数えない店舗がある。</li>
+          </ul>
+          <p>自由記述のアンケートは非構造化データです。生成AIで「料金」「混雑」「転居」「効果を感じない」などに分類すれば、退会理由の全体像がつかめます（個人が特定できる情報は除いてから処理します）。</p>
+        </div>
+        <div class="choice" data-widget="choice"><script type="application/json">{"q":"「休会」の扱いが店舗で違う。どうするべきか。","o":[
+          {"t":"データサイエンティストに任せ、都合のよい方に統一してもらう","ok":false,"fb":"定義は業務の判断です。分析者だけで決めると、後で数字の意味が食い違います（2-3）。"},
+          {"t":"事業部と相談して定義を決め、その判断と理由を記録する","ok":true,"fb":"休会を含めるかで退会率も予測の対象も変わります。業務側と決めて記録に残せば、後から検証できます。"},
+          {"t":"休会中の会員のデータはすべて削除する","ok":false,"fb":"休会は退会の前兆かもしれません。重要な情報を捨ててしまう可能性があります。"}
+        ]}</script></div>
+        <p class="fig__note">関連：<a href="modules/m2.html#l2-1">2-1 データの種類</a>、<a href="modules/m2.html#l2-3">2-3 データの質と前処理</a></p>
+      </div>
+    </section>
+
+    <section class="case-step" id="s4">
+      <span class="case-step__no">4</span>
+      <div>
+        <h2>データを探索する</h2>
+        <div class="prose">
+          <p>まず、直近30日の来館回数ごとに、翌月の退会率を集計しました。来館が途切れた会員ほど、翌月に辞めていることがわかります。</p>
+        </div>
+        <figure class="fig" data-widget="case-churn" data-title="来館回数別の翌月退会率" data-icon="chart-bar"></figure>
+        <div class="dialog">
+          <div class="say"><span class="say__who">部長</span><p class="say__text"><small>事業部長</small>なるほど！じゃあ、来館回数を増やすキャンペーンをすれば、退会は減るんだね。</p></div>
+        </div>
+        <div class="choice" data-widget="choice"><script type="application/json">{"q":"部長の結論に、どう答えるか。","o":[
+          {"t":"「はい、データがはっきり示しています」","ok":false,"fb":"これは相関です。辞めると決めた人が来なくなっている（逆の因果）可能性があります（3-4）。"},
+          {"t":"「そうとは限りません。辞めると決めたから来なくなった可能性もあります。施策の効果は実験で確かめましょう」","ok":true,"fb":"相関から施策の効果は言えません。ただし来館の減少は「退会の前兆」としては使えるので、予測には役立ちます。"},
+          {"t":"「データが少ないので何も言えません」","ok":false,"fb":"会員1万人分のデータがあり、傾向ははっきりしています。言えることと言えないことを分けるのが大切です。"}
+        ]}</script></div>
+        <p class="fig__note">関連：<a href="modules/m3.html#l3-4">3-4 相関と因果</a></p>
+      </div>
+    </section>
+
+    <section class="case-step" id="s5">
+      <span class="case-step__no">5</span>
+      <div>
+        <h2>予測モデルをつくり、対象を決める</h2>
+        <div class="prose">
+          <p>データサイエンティストが、勾配ブースティングで「30日以内に退会する確率」を予測するモデルをつくりました。学習に使っていない直近3か月のデータで確かめると、リスク上位20%の会員に、実際の退会者の約半数が含まれていました。</p>
+          <p>次は、何%までの会員に声をかけるかを決めます。スライダーを動かし、利益が最大になる範囲を探してください。</p>
+        </div>
+        <figure class="fig" data-widget="case-profit" data-title="声かけの範囲と月あたりの利益" data-icon="yen"></figure>
+        <div class="choice" data-widget="choice"><script type="application/json">{"q":"声かけの対象（しきい値）は、何を基準に決めるべきか。","o":[
+          {"t":"モデルの正解率が最も高くなるしきい値","ok":false,"fb":"退会は全体の2%ほどの珍しい事象です。正解率は役に立ちません（4-6）。"},
+          {"t":"声かけのコストと引き止めの効果から、利益が最大になる範囲","ok":true,"fb":"しきい値はビジネスの判断です。コストや効果の前提が変われば、最適な範囲も変わります。"},
+          {"t":"念のため会員全員に声をかける","ok":false,"fb":"図で上位60%まで広げると赤字になります。スタッフの負担と会員の体験も悪化します。"}
+        ]}</script></div>
+        <p class="fig__note">関連：<a href="modules/m4.html#l4-5">4-5 過学習</a>、<a href="modules/m4.html#l4-6">4-6 適合率と再現率</a></p>
+      </div>
+    </section>
+
+    <section class="case-step" id="s6">
+      <span class="case-step__no">6</span>
+      <div>
+        <h2>施策の効果を実験で確かめる</h2>
+        <div class="prose">
+          <p>リスク上位の会員2,400人を無作為に2つに分け、一方にだけスタッフが声をかけました。3か月後の退会率を比べた結果が下の図です。</p>
+        </div>
+        <figure class="fig" data-widget="case-ab" data-title="声かけの有無と3か月の退会率" data-icon="split"></figure>
+        <div class="choice" data-widget="choice"><script type="application/json">{"q":"差は2.5ポイント、p値は約0.07だった。どう判断するか。","o":[
+          {"t":"p値が0.05を超えたので、効果はないと結論して中止する","ok":false,"fb":"「有意でない」は「効果がない」という意味ではありません。差の大きさは事業的に意味がありそうです（3-5）。"},
+          {"t":"差が出たので、効果ありと断定して全店に展開する","ok":false,"fb":"偶然の可能性はまだ十分に残っています。断定するには根拠が足りません。"},
+          {"t":"効果がありそうだが確証はない。対象や期間を広げて検証を続け、費用対効果で判断する","ok":true,"fb":"不確かさを正直に伝え、次の検証を設計するのがよい判断です。同時に、実験で得た引き止め率で試算をやり直します。"}
+        ]}</script></div>
+        <p class="fig__note">関連：<a href="modules/m3.html#l3-5">3-5 A/Bテストと有意差</a></p>
+      </div>
+    </section>
+
+    <section class="case-step" id="s7">
+      <span class="case-step__no">7</span>
+      <div>
+        <h2>前提を更新し、運用に乗せる</h2>
+        <div class="prose">
+          <p>実験の結果、引き止め率は想定の25%ではなく約18%でした。下の図は実験値の18%で試算し直したものです。スタッフの声かけ（1人1,000円）のままでは、どの範囲を選んでも利益はほぼゼロになります。</p>
+          <p>そこで、まずアプリの通知で来館を促し、反応のない会員にだけスタッフが声をかける二段構えに変えました。1人あたりのコストを500円まで下げると、利益が出る範囲が戻ってきます。コストのスライダーを動かして確かめてください。</p>
+        </div>
+        <figure class="fig" data-widget="case-profit" data-save="0.18" data-cost="1000" data-title="実験値で試算し直す" data-icon="refresh"></figure>
+        <div class="prose" style="margin-top:20px">
+          <p>本番に向けて、次のことを決めました。</p>
+          <ul>
+            <li><strong>使い方</strong>：毎週月曜に、店舗の業務画面にリスク上位の会員と「主な理由3つ」を表示する（8-2）。</li>
+            <li><strong>監視</strong>：予測の当たり具合を毎月確認し、基準を下回ったら再学習する。担当はデータ部門（7-4）。</li>
+            <li><strong>配慮</strong>：しつこい引き止めは会員の体験を損なう。声かけは1人につき月1回まで。退会の手続きを難しくすることはしない。</li>
+            <li><strong>情報の扱い</strong>：自由記述の分析に生成AIを使うときは、個人が特定できる情報を除き、社内で認められたサービスだけを使う（8-4）。</li>
+          </ul>
+        </div>
+        <div class="dialog">
+          <div class="say"><span class="say__who">部長</span><p class="say__text"><small>事業部長</small>最初は「AIで予測」と言っていたけど、本当に決めるべきだったのは、誰に、いくらかけて、どう声をかけるかだったんだね。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson" data-lesson="case" data-level="2" id="case-done" style="padding-top:36px">
+      <div class="summary-box">
+        <h3>このケースで使った知識</h3>
+        <ul>
+          <li>問いの翻訳：予測は手段。使う人と行動から逆算する（1-1、7-1）</li>
+          <li>データの棚卸し：定義は業務と決めて記録する。非構造化データも宝になる（2-1、2-3）</li>
+          <li>相関と因果：前兆は予測に使えるが、施策の効果は実験で確かめる（3-4、3-5）</li>
+          <li>評価としきい値：正解率ではなく、お金で決める（4-6、6-3）</li>
+          <li>運用とリスク：理由の提示、監視、会員への配慮、情報の扱い（7-4、8-2、8-4）</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+</main>
+<div data-site-footer></div>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/curriculum.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/viz-foundations.js"></script>
+<script src="assets/js/viz-ml.js"></script>
+<script src="assets/js/viz-business.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>統計で考える｜データサイエンス方眼帳</title>
+<meta name="ds-root" content="../">
+<meta name="ds-page" content="modules">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+<section class="mod-hero">
+  <div class="wrap mod-hero__grid">
+    <div class="mod-hero__no" aria-hidden="true">3</div>
+    <div>
+      <p class="mod-hero__crumb"><a href="../index.html#roadmap">学習ロードマップ</a><span>/</span><span>モジュール3</span></p>
+      <h1>統計で考える</h1>
+      <p class="lead">統計は数式の暗記ではなく、数字に騙されないための思考の道具です。平均の落とし穴、ばらつき、サンプルの限界、相関と因果、実験の読み方を、点を動かしながら身につけます。</p>
+      <div class="mod-hero__facts">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>5レッスン</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約45分</span>
+      </div>
+      <div class="outcomes">
+        <h2>このモジュールでできるようになること</h2>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>平均と中央値を使い分け、分布を確かめる習慣がつく</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>ばらつきをリスクとして説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>サンプル調査の結果を、幅をもって読める</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>相関と因果を混同した主張を見抜ける</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>A/Bテストの結果を正しく解釈できる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap mod-layout">
+  <nav class="toc" data-toc aria-label="目次"></nav>
+  <div>
+
+    <section class="lesson" id="l3-1" data-lesson="3-1" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">3-1</span><h2>平均と中央値</h2></div>
+      <p class="lesson__key"><span>平均は外れ値ひとつで大きく動く。「ふつうの人」を知りたいなら中央値を見る。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>下の図は、ある会社の社員9人の年収です。「社長を加える」を押してみてください。平均は大きく右に動きますが、中央値（大きさ順に並べて真ん中の値）はほとんど動きません。</p>
+          <p>年収、購入額、住宅価格のように、一部の大きな値が全体を引っぱるデータでは、平均は「ふつう」を表しません。社長を加えると、10人中9人が「平均以下」になります。</p>
+          <p>平均・中央値・最頻値はいずれも<strong>代表値</strong>です。どれを使ったかで印象が大きく変わるので、資料では必ず明記します。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>クライアントの「平均客単価が上がった」は、<b>一部の大口顧客の影響</b>かもしれない。まず分布（ヒストグラム）を見せてもらう。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="mean-median" data-title="社員の年収：平均と中央値" data-icon="users"></figure>
+    </section>
+
+    <section class="lesson" id="l3-2" data-lesson="3-2" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">3-2</span><h2>ばらつきと分布</h2></div>
+      <p class="lesson__key"><span>平均が同じでも、ばらつきが違えばリスクはまったく違う。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>ばらつきの大きさは<strong>標準偏差（σ、シグマ）</strong>で表します。データが左右対称の山形（正規分布）に近いとき、平均±1σの範囲に約68%、±2σの範囲に約95%が入ります。</p>
+          <p>図は、どちらも平均3日で届く2つの配送サービスです。B社のばらつきを大きくすると、平均は同じでも「5日を超える」確率が急に増えます。</p>
+          <p>顧客が不満を持つのは、平均ではなく<strong>ばらつきの端</strong>で起きたことです。納期、待ち時間、需要予測の外れ。ビジネスの問題の多くは、ばらつきの問題として捉え直せます。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>「平均リードタイム3日」という報告には、<b>「95%の注文は何日以内に届くか」</b>を添えてもらう。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="spread" data-title="平均は同じ3日、ばらつきの違い" data-icon="bell"></figure>
+    </section>
+
+    <section class="lesson" id="l3-3" data-lesson="3-3" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">3-3</span><h2>標本から全体を推し量る</h2></div>
+      <p class="lesson__key"><span>サンプル調査の結果は「点」ではなく「幅」で読む。人数が少ないほど幅は広い。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>全員を調べられないときは、一部（<span class="term">標本</span>）を調べて全体（<span class="term">母集団</span>）を推測します。図は、満足率が本当は30%の顧客900人から、何人かを無作為に選んで満足率を推定する実験です。</p>
+          <p>「サンプルを取る」を何度か押してみてください。推定値は毎回ぶれます。<strong>95%信頼区間</strong>は「この方法で何度も調べたら、そのうち95%の区間が本当の値を含む」という幅です。10人だと幅が広く、300人だと狭くなります。幅を半分にするには、人数を約4倍にする必要があります。</p>
+          <p>この推定が成り立つのは、サンプルが<strong>無作為</strong>に選ばれたときだけです。自社アプリの利用者だけに聞いたアンケートは、何人集めても全顧客の代表にはなりません（選択バイアス）。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>「回答者の60%が満足」と書く前に<b>「何人中？　誰に聞いた？」</b>を確認。20人なら幅はおよそ±20ポイントもある。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="sampling" data-title="標本から満足率を推定する" data-icon="dice"></figure>
+    </section>
+
+    <section class="lesson" id="l3-4" data-lesson="3-4" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">3-4</span><h2>相関と因果</h2></div>
+      <p class="lesson__key"><span>一緒に動くことと、一方が他方を動かすことは違う。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p><strong>相関</strong>は、2つの量が一緒に増減する傾向です。強さは相関係数 r（−1〜1）で表します。まずスライダーで、r と点の散らばり方の関係をつかんでください。</p>
+          <p>相関があっても、因果があるとは限りません。アイスの売上と水難事故には強い相関がありますが、本当の原因は気温です。両方に影響する隠れた要因を<strong>交絡因子</strong>と呼びます。</p>
+          <p>因果を確かめる最も確実な方法は、施策をする群としない群を無作為に分ける<strong>実験</strong>です（次のレッスン）。実験できないときは、交絡因子を考慮した分析が必要になります。</p>
+          <p>「研修を受けた社員は成績が良い」「アプリの利用者は購入額が多い」。もともと意欲の高い人が研修を受け、アプリを使っているだけかもしれません。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>相関を根拠にした主張には、<b>「逆の因果は？　第三の要因は？　ただの偶然は？」</b>の3つを当ててみる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="correlation" data-title="相関の強さと、隠れた要因" data-icon="scatter"></figure>
+    </section>
+
+    <section class="lesson" id="l3-5" data-lesson="3-5" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">3-5</span><h2>A/Bテストと有意差</h2></div>
+      <p class="lesson__key"><span>差が「偶然の範囲」かを確かめるのが検定。有意でも、ビジネス上意味のある差とは限らない。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p><strong>A/Bテスト</strong>は、利用者を無作為に2つに分け、違うもの（例：Webページ）を見せて結果を比べる方法です。無作為に分けるので、結果の差は施策によるものと考えられます。</p>
+          <p><strong>p値</strong>は「本当は差がないのに、偶然これ以上の差が出る確率」です。0.05未満なら「統計的に有意」と呼ぶ慣習があります。</p>
+          <p>図で「本当の差：なし」に切り替えて何度か試すと、ときどき有意になります（<strong>偽陽性</strong>）。たくさん検定すれば、どれかは偶然有意になります。</p>
+          <p>逆に人数が多ければ、ごく小さな差でも有意になります。<strong>「有意か」と「意味のある大きさか」は別の問い</strong>です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>テストの前に<b>「何人集めて、何を見て、どうなったら採用するか」</b>を決めて合意しておく。結果を見てから基準を決めるのは反則。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="abtest" data-title="A/Bテストのシミュレーション" data-icon="split"></figure>
+    </section>
+
+    <section id="summary" data-toc-extra data-toc-title="まとめと確認テスト">
+      <div class="summary-box">
+        <h3>モジュール3のまとめ</h3>
+        <ul>
+          <li>代表値は分布とセットで見る。偏った分布では中央値が「ふつう」に近い。</li>
+          <li>リスクはばらつきの端で起きる。平均だけで判断しない。</li>
+          <li>サンプルの結果は幅で読む。誰に聞いたかで代表性が決まる。</li>
+          <li>相関は因果ではない。因果を確かめるなら実験。</li>
+          <li>有意かどうかと、事業的に意味のある差かどうかは別に判断する。</li>
+        </ul>
+      </div>
+      <h2 class="section__head" style="margin-top:40px;font-size:var(--step-2);font-weight:900">確認テスト</h2>
+      <div class="quiz" data-quiz="m3"><script type="application/json">[
+        {"q":"一部に極端に大きな値がある年収データで、「ふつうの人」を表すのに適した代表値はどれか。","o":["平均","中央値","最大値","合計"],"a":1,"exp":"中央値は大きさ順で真ん中の値なので、外れ値の影響をほとんど受けません。"},
+        {"q":"10人に聞いたアンケートで「満足度60%」だった。正しい読み方はどれか。","o":["全顧客の60%が満足している","推定の幅が大きく、本当の値はかなり広い範囲にありうる","10人なら誤差はない","60%より必ず低い"],"a":1,"exp":"10人だと95%信頼区間はおよそ±30ポイントにもなります。さらに、誰に聞いたか（無作為か）も確認が必要です。"},
+        {"q":"「アプリ利用者の購入額は非利用者の1.5倍。全員にアプリを入れてもらえば売上が増える」。最も適切な指摘はどれか。","o":["1.5倍は小さすぎる","もともと購入意欲の高い人がアプリを使っている可能性があり、因果とは限らない","アプリの評価が低い","サンプルが多すぎる"],"a":1,"exp":"相関は因果ではありません。アプリの効果を知りたいなら、無作為に分けて比べる実験が必要です。"},
+        {"q":"A/Bテストで p=0.01、購入率の差は0.05ポイントだった。正しい解釈はどれか。","o":["差は偶然で、施策に効果はない","偶然とは考えにくいが、差が事業的に意味のある大きさかは別に判断する","効果が大きいので全面展開すべき","p値が小さいほど効果が大きい"],"a":1,"exp":"人数が多いと、ごく小さな差でも有意になります。p値は効果の大きさを表しません。"}
+      ]</script></div>
+    </section>
+    <nav class="pager" data-pager="m3" aria-label="モジュールの移動"></nav>
+  </div>
+</div>
+</main>
+<div data-site-footer></div>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/curriculum.js"></script>
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/viz-foundations.js"></script>
+<script src="../assets/js/viz-ml.js"></script>
+<script src="../assets/js/viz-business.js"></script>
+</body>
+</html>

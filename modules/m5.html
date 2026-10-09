@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>生成AIを使いこなす｜データサイエンス方眼帳</title>
+<meta name="ds-root" content="../">
+<meta name="ds-page" content="modules">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+<section class="mod-hero">
+  <div class="wrap mod-hero__grid">
+    <div class="mod-hero__no" aria-hidden="true">5</div>
+    <div>
+      <p class="mod-hero__crumb"><a href="../index.html#roadmap">学習ロードマップ</a><span>/</span><span>モジュール5</span></p>
+      <h1>生成AIを使いこなす</h1>
+      <p class="lead">生成AIは、コンサルの仕事を最も直接的に変える技術です。しくみを知れば、得意な仕事と危ない仕事の境界が見えてきます。使いこなしと検証の両方を身につけます。</p>
+      <div class="mod-hero__facts">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>6レッスン</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約45分</span>
+      </div>
+      <div class="outcomes">
+        <h2>このモジュールでできるようになること</h2>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>LLMが文章を生成するしくみと、誤りが起きる理由を説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>目的に応じたプロンプトを組み立てられる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>RAGとエージェントの構成と、導入時の論点を説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>任せてよい仕事と、人が担うべき仕事を切り分けられる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap mod-layout">
+  <nav class="toc" data-toc aria-label="目次"></nav>
+  <div>
+
+    <section class="lesson" id="l5-1" data-lesson="5-1" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">5-1</span><h2>LLMは次の言葉を予測している</h2></div>
+      <p class="lesson__key"><span>LLMは「事実かどうか」ではなく「次に来そうな言葉」を選び続けて文章をつくる。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>大規模言語モデル（<span class="term">LLM</span>）は、膨大な文章から「ある文脈の次に来る言葉の確率」を学習したモデルです。文章の生成は、次の言葉を1つ選ぶことの繰り返しです。</p>
+          <p>図で「次の1語を選ぶ」を押してみてください。確率の高い言葉が選ばれやすいものの、毎回同じとは限りません。<strong>温度</strong>を上げると、意外な言葉も選ばれるようになります。</p>
+          <p>文章を区切る単位は<span class="term">トークン</span>と呼ばれます。一度に扱えるトークン数（コンテキストウィンドウ）には上限があり、利用料金もトークン数で決まることが多いです。</p>
+          <p>このしくみのため、LLMは<strong>もっともらしいが事実ではない文章</strong>を生むことがあります。これを<span class="term">ハルシネーション</span>と呼びます。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>同じ質問を2〜3回してみて、<b>答えがぶれる箇所</b>はAIが確信を持てていない箇所。そこを重点的に確かめる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="next-token" data-title="次の言葉を選ぶしくみ" data-icon="token"></figure>
+    </section>
+
+    <section class="lesson" id="l5-2" data-lesson="5-2" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">5-2</span><h2>得意なこと・苦手なこと</h2></div>
+      <p class="lesson__key"><span>言葉を扱う仕事は得意。正確な事実、最新情報、自社固有の事情は苦手。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>仕事</th><th class="c">向き</th><th>使い方のコツ</th></tr></thead>
+              <tbody>
+                <tr><td>要約・議事録の整理</td><td class="c"><span class="tag tag--wk">得意</span></td><td>元の資料を必ず渡す</td></tr>
+                <tr><td>アイデア出し</td><td class="c"><span class="tag tag--wk">得意</span></td><td>量を出させてから人が選ぶ</td></tr>
+                <tr><td>資料・文章のドラフト</td><td class="c"><span class="tag tag--wk">得意</span></td><td>構成と主張は人が決める</td></tr>
+                <tr><td>分析コードの作成</td><td class="c"><span class="tag">条件つき</span></td><td>結果の数字を検算する</td></tr>
+                <tr><td>事実・数字の調査</td><td class="c"><span class="tag tag--ym">要注意</span></td><td>検索機能を使い、原典を必ず確認</td></tr>
+                <tr><td>最終的な判断</td><td class="c"><span class="tag tag--bn">任せない</span></td><td>人が担い、責任を持つ</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>苦手なのは、出典つきの正確な事実（存在しない論文や数字を作ることがある）、学習時点より新しい情報（検索機能がない場合）、桁の多い計算（コード実行がない場合）、そして教えていない自社の事情です。</p>
+          <p>下の図の回答は一見もっともらしいですが、検証すると問題が見つかります。<strong>具体的な数字と出典の組み合わせ</strong>は、最も疑うべき箇所です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>AIが出した数字は、<b>原典で確かめるまで「仮置き」</b>。2025年には、AIが生成したとみられる架空の引用を含む報告書を理由に、大手ファームがオーストラリア政府に報酬の一部を返金した。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="hallucination" data-title="AIの回答を検証する" data-icon="search"></figure>
+    </section>
+
+    <section class="lesson" id="l5-3" data-lesson="5-3" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">5-3</span><h2>プロンプトの組み立て方</h2></div>
+      <p class="lesson__key"><span>AIへの指示は、新人への仕事の頼み方と同じ。役割・目的・背景・入力・制約・出力形式を伝える。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>「〜について教えて」だけでは、どの会社にも当てはまる一般論が返ってきます。新しく入ったアナリストに頼むときと同じように、文脈を渡します。</p>
+          <p>図で要素を加えるたびに、指示が具体的になる様子を確かめてください。特に<strong>目的</strong>（何に使うか）と<strong>制約</strong>（推測と事実を分ける、わからなければ「不明」と書く）は効果が大きい要素です。</p>
+          <p>一度で完璧を狙わず、出力を見て追加の指示を出します。対話しながら仕上げるのが基本です。機密情報や個人情報を入力してよいかは、自社とクライアントのルールに従います。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>うまくいったプロンプトは<b>チームで共有して型にする</b>。個人の工夫で終わらせない。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="prompt-builder" data-title="プロンプトを組み立てる" data-icon="pen"></figure>
+    </section>
+
+    <section class="lesson" id="l5-4" data-lesson="5-4" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">5-4</span><h2>RAG：社内の知識を参照させる</h2></div>
+      <p class="lesson__key"><span>社内文書を検索してから答えさせると、自社固有の質問に、出典つきで答えられる。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>LLMは学習時点の一般知識しか持っていません。社内規程や製品マニュアルについて聞かれても、もっともらしい一般論で答えてしまいます。</p>
+          <p><span class="term">RAG</span>（検索拡張生成）は、質問に関連する文書を先に検索し、それを資料としてLLMに渡して答えさせるしくみです。回答に出典を付けられます。「RAGの流れを再生」と「RAGなしの場合」を比べてみてください。</p>
+          <p>回答の質は、検索される<strong>文書の質</strong>で決まります。古い規程、重複した資料、アクセス権の設定漏れがあると、そのまま回答に出てきます。RAG導入の本当の仕事は、文書の整備と権限の設計です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>RAGのPoCでは、<b>答えられなかった質問と間違えた質問を集めて分類</b>する。多くは検索の問題か、元の文書の問題。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="rag" data-title="RAGのしくみ" data-icon="doc-search"></figure>
+    </section>
+
+    <section class="lesson" id="l5-5" data-lesson="5-5" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">5-5</span><h2>AIエージェント：計画して道具を使う</h2></div>
+      <p class="lesson__key"><span>目標に向けて計画し、ツールを使い、結果を見て直す。どこで人が承認するかの設計が要。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p><span class="term">AIエージェント</span>は、Web検索、表計算、社内システムなどの<strong>ツール</strong>を使いながら、複数の手順を自律的にこなします。</p>
+          <p>図で「再生」を押すと、競合の価格比較表をつくるエージェントの動きを追えます。取得できない情報に出会ったとき、推定で埋めずに「非公開」と書く判断をしている点に注目してください。</p>
+          <p>自律性が高いほど、途中の誤りが積み重なり、影響も大きくなります。メール送信、発注、データの書き換えなど、<strong>取り消しにくい行動の前には人の承認</strong>を入れます。</p>
+          <p>調査会社ガートナーは2025年6月、エージェント型AIの案件の40%以上が2027年末までに中止されると予測しました。理由として、コストの増大、価値の不明確さ、リスク管理の不足を挙げています。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>エージェントの提案では、<b>業務フロー図に「AIがやる」「人が確認する」を色分けして描く</b>。それだけで議論の質が上がる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="agent-loop" data-title="AIエージェントの動き" data-icon="robot"></figure>
+    </section>
+
+    <section class="lesson" id="l5-6" data-lesson="5-6" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">5-6</span><h2>ギザギザの境界：任せる仕事の見極め</h2></div>
+      <p class="lesson__key"><span>AIが得意な仕事と苦手な仕事の境界はギザギザで、見た目の難しさとは一致しない。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>BCGとハーバード大学などの研究者は2023年、BCGのコンサルタント758人を対象に、GPT-4の効果を実験で確かめました。</p>
+          <div class="ev__stats" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));display:grid">
+            <div class="stat"><b>+12.2%</b><span>こなしたタスク数</span></div>
+            <div class="stat"><b>+25.1%</b><span>作業の速さ</span></div>
+            <div class="stat"><b>+40%以上</b><span>成果物の品質</span></div>
+            <div class="stat"><b style="color:var(--beni)">−19pt</b><span>境界の外の課題での正答率</span></div>
+          </div>
+          <p>AIの得意な範囲（境界の内側）の仕事では、AIを使ったグループが量・速さ・質のすべてで上回りました。もともと成績が低かった人ほど伸びが大きかったと報告されています。</p>
+          <p>一方、境界の外側の仕事（数表とインタビューを突き合わせて原因を特定する課題）では、AIを使ったグループのほうが正答率が低くなりました。AIのもっともらしい誤答を、そのまま採用してしまったためです。</p>
+          <p>研究者はこの境界を「ギザギザの技術的フロンティア」と呼びました。簡単そうな仕事が外側にあり、難しそうな仕事が内側にあることもあります。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>新しい種類の仕事をAIに任せるときは、<b>最初の数回は自分でもやって答え合わせ</b>する。境界の位置は、試してみないとわからない。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="jagged" data-title="ギザギザの境界" data-icon="map"></figure>
+    </section>
+
+    <section id="summary" data-toc-extra data-toc-title="まとめと確認テスト">
+      <div class="summary-box">
+        <h3>モジュール5のまとめ</h3>
+        <ul>
+          <li>LLMは「ありそうな言葉」を選ぶ。事実の正しさは保証されない。</li>
+          <li>数字・出典・固有名詞は必ず原典で確かめる。</li>
+          <li>プロンプトは新人への依頼と同じ。目的と制約が効く。</li>
+          <li>RAGの品質は文書の質で決まる。エージェントは人の承認点の設計が要。</li>
+          <li>任せる仕事の境界はギザギザ。試して、答え合わせをして見極める。</li>
+        </ul>
+      </div>
+      <h2 class="section__head" style="margin-top:40px;font-size:var(--step-2);font-weight:900">確認テスト</h2>
+      <div class="quiz" data-quiz="m5"><script type="application/json">[
+        {"q":"LLMがハルシネーションを起こす根本的な理由はどれか。","o":["利用者をだまそうとしているから","次に来そうな言葉を確率で選んで文章をつくっているから","常にインターネットに接続しているから","計算が遅いから"],"a":1,"exp":"LLMは「ありそうな言葉」を選ぶしくみなので、事実と異なる内容でももっともらしく書けてしまいます。"},
+        {"q":"社内規程に関する社員の質問に答えるAIをつくりたい。最も適したしくみはどれか。","o":["汎用のLLMにそのまま質問する","RAGで社内規程を検索してから答えさせる","画像認識","クラスタリング"],"a":1,"exp":"RAGなら自社の規程に基づき、出典つきで答えられます。品質は規程文書の整備状況に左右されます。"},
+        {"q":"AIエージェントに取引先へのメール送信まで任せる計画がある。最初に設計すべきことはどれか。","o":["使うAIモデルの種類","送信の前に人が承認するポイント","メールの文字数","エージェントの名前"],"a":1,"exp":"取り消しにくい行動の前に人の承認を入れるのが、エージェント導入の基本です。"},
+        {"q":"BCGらの実験で、AIの得意な範囲の「外側」の課題でAIを使ったグループに起きたことはどれか。","o":["正答率が上がった","変わらなかった","正答率が下がった","課題を終えられなかった"],"a":2,"exp":"AIのもっともらしい誤答を採用してしまい、使わないグループより正答率が下がりました。"}
+      ]</script></div>
+    </section>
+    <nav class="pager" data-pager="m5" aria-label="モジュールの移動"></nav>
+  </div>
+</div>
+</main>
+<div data-site-footer></div>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/curriculum.js"></script>
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/viz-foundations.js"></script>
+<script src="../assets/js/viz-ml.js"></script>
+<script src="../assets/js/viz-business.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>全体像をつかむ｜データサイエンス方眼帳</title>
+<meta name="ds-root" content="../">
+<meta name="ds-page" content="modules">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+<section class="mod-hero">
+  <div class="wrap mod-hero__grid">
+    <div class="mod-hero__no" aria-hidden="true">1</div>
+    <div>
+      <p class="mod-hero__crumb"><a href="../index.html#roadmap">学習ロードマップ</a><span>/</span><span>モジュール1</span></p>
+      <h1>全体像をつかむ</h1>
+      <p class="lead">細部に入る前に地図を持ちましょう。データサイエンスとは何をする営みで、AIとどう関係し、プロジェクトはどう進むのか。そしてコンサルはどこに立つのか。</p>
+      <div class="mod-hero__facts">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>5レッスン</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約35分</span>
+      </div>
+      <div class="outcomes">
+        <h2>このモジュールでできるようになること</h2>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>データが価値に変わるまでの道筋を説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>AI・機械学習・深層学習・生成AIを正しく使い分けられる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>クライアントの分析の成熟度を4段階で示せる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>分析プロジェクトのどこでコンサルが価値を出すかを語れる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap mod-layout">
+  <nav class="toc" data-toc aria-label="目次"></nav>
+  <div>
+
+    <section class="lesson" id="l1-1" data-lesson="1-1" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">1-1</span><h2>データサイエンスとは何か</h2></div>
+      <p class="lesson__key"><span>データから「次に何をすべきか」を導くための、技術と考え方の集まり。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>データサイエンスは、統計学・機械学習・データ処理の技術を使って、データから意思決定に役立つ知見を引き出す取り組みです。数学やプログラミングそのものが目的ではありません。</p>
+          <p>下の図のように、データは<strong>情報</strong>と<strong>洞察</strong>を経て、<strong>行動</strong>に変わってはじめて価値になります。現場では最初の2段階（集計と可視化）で止まり、誰の行動も変えない分析が少なくありません。</p>
+          <p>生成AIの登場で、集計やコードを書く作業は誰でも速くできるようになりました。差がつくのは、何を問うかという入口と、結果をどう行動に変えるかという出口です。どちらもコンサルの本業と重なります。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>「データ分析をしてほしい」という依頼は、行動の段階が決まっていないことが多い。最初に<b>「この結果で、誰が何を決めますか？」</b>と聞く。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="pipeline" data-title="データが行動に変わるまで" data-icon="route"></figure>
+    </section>
+
+    <section class="lesson" id="l1-2" data-lesson="1-2" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">1-2</span><h2>AI・機械学習・深層学習・生成AIの関係</h2></div>
+      <p class="lesson__key"><span>生成AIはAIの一部にすぎない。企業で「予測するAI」の多くは機械学習で動いている。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>4つの言葉は入れ子の関係にあります。AIがいちばん広く、その中に機械学習、さらに深層学習、生成AIが含まれます。円をクリックすると、それぞれの説明が出ます。</p>
+          <p>2022年以降の話題は生成AIに集中していますが、需要予測や不正検知のように<strong>数値を予測したり分類したりするAI</strong>の主役は、以前から使われてきた機械学習です。両者は得意なことが違います。</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th></th><th>予測・分類するAI</th><th>生成AI</th></tr></thead>
+              <tbody>
+                <tr><th>出力</th><td>数値・ラベル（来月の需要、不正かどうか）</td><td>文章・画像・コード</td></tr>
+                <tr><th>学習データ</th><td>主に自社の表形式データ</td><td>大量の公開テキストなど（自社文書は後から参照させる）</td></tr>
+                <tr><th>評価</th><td>正解と比べやすい</td><td>正解が一つでなく、評価が難しい</td></tr>
+                <tr><th>代表例</th><td>需要予測、離反予測、与信</td><td>要約、議事録、資料ドラフト、問い合わせ対応</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>「AIで何かやりたい」という相談は、<b>①予測したい ②自動化したい ③文章や資料をつくりたい</b>のどれかに分けると話が進む。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="ai-nested" data-title="AIの入れ子構造と歴史" data-icon="nested"></figure>
+    </section>
+
+    <section class="lesson" id="l1-3" data-lesson="1-3" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">1-3</span><h2>分析の4段階：記述・診断・予測・処方</h2></div>
+      <p class="lesson__key"><span>「何が起きた→なぜ→何が起きる→何をすべき」。段階が上がるほど、価値も難しさも上がる。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>調査会社ガートナーが広めた分類で、<span class="term">記述的分析</span>、<span class="term">診断的分析</span>、<span class="term">予測的分析</span>、<span class="term">処方的分析</span>の4段階があります。段をクリックすると、小売チェーンの例が出ます。</p>
+          <p>多くの企業は記述（ダッシュボード）の段階にとどまっています。次の段へ進むには、データや道具より先に、<strong>問い</strong>と<strong>業務の変更</strong>が必要です。</p>
+          <p>コンサルが得意なのは診断です。予測と処方の段階では、モデルの精度と、その予測を業務でどう使うかを一緒に設計する力が求められます。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>クライアントの現在地を4段階で見せると、<b>次に何をするか</b>の合意が取りやすい。いきなり処方を目指すより、1段ずつ上がる計画のほうが通る。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="analytics-stairs" data-title="分析の4段階（小売チェーンの例）" data-icon="stairs"></figure>
+    </section>
+
+    <section class="lesson" id="l1-4" data-lesson="1-4" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">1-4</span><h2>分析プロジェクトの進め方（CRISP-DM）</h2></div>
+      <p class="lesson__key"><span>分析は一直線に進まない。ビジネスとデータの間を何度も行き来する。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p><span class="term">CRISP-DM</span>は、1990年代末に業界横断でつくられた分析プロセスの標準モデルです。今も実務の共通言語として使われています。</p>
+          <p>フェーズは6つ。ビジネス理解、データ理解、データ準備、モデリング、評価、展開です。データを見て問いを直す、評価の結果を受けてビジネス理解に戻る、といった<strong>行き来が普通</strong>です。</p>
+          <p>最初と最後のフェーズ（ビジネス理解・評価・展開）は、技術よりもビジネスの判断が中心です。コンサルが価値を出しやすいのはここです。図の●の数は、各フェーズでのコンサルの関与度の目安です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>計画は<b>「戻る」前提で工数を見積もる</b>。一直線のガントチャートは、たいてい遅れる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="crisp" data-title="CRISP-DMの6つのフェーズ" data-icon="refresh"></figure>
+    </section>
+
+    <section class="lesson" id="l1-5" data-lesson="1-5" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">1-5</span><h2>3つのスキルとコンサルの立ち位置</h2></div>
+      <p class="lesson__key"><span>ビジネス力を軸に、データサイエンスとエンジニアリングを「判断できる」水準まで持つ。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>データサイエンティスト協会は、必要なスキルを3つに整理しています。課題の背景を理解して解決に導く<strong>ビジネス力</strong>、統計や機械学習を理解して使う<strong>データサイエンス力</strong>、データを使える形にして実装・運用する<strong>データエンジニアリング力</strong>です。</p>
+          <p>経済産業省とIPAの「デジタルスキル標準」でも、DXを推進する人材として<strong>ビジネスアーキテクト</strong>や<strong>データサイエンティスト</strong>が定義されています。コンサルの役割に近いのはビジネスアーキテクトです。</p>
+          <p>3つすべてを一人で極める必要はありません。自分の強みを軸に、他の領域の専門家と<strong>同じ言葉で話せる</strong>ことが大切です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>若手のうちに一度は、<b>小さな分析を最初から最後まで自分の手で</b>やってみる。AIに任せる前に何が難しいかを体で知っておくと、レビューの目が育つ。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="venn" data-title="3つのスキルと人物像" data-icon="venn"></figure>
+    </section>
+
+    <section id="summary" data-toc-extra data-toc-title="まとめと確認テスト">
+      <div class="summary-box">
+        <h3>モジュール1のまとめ</h3>
+        <ul>
+          <li>データは「情報→洞察→行動」まで届いてはじめて価値になる。</li>
+          <li>生成AIはAIの一部。予測・分類の多くは機械学習が担う。</li>
+          <li>分析は記述・診断・予測・処方の4段階。1段ずつ上がる。</li>
+          <li>分析プロジェクトは行き来する。入口と出口がコンサルの主戦場。</li>
+        </ul>
+      </div>
+      <h2 class="section__head" style="margin-top:40px;font-size:var(--step-2);font-weight:900">確認テスト</h2>
+      <div class="quiz" data-quiz="m1"><script type="application/json">[
+        {"q":"「データ→情報→洞察→行動」の流れで、分析の価値が最終的に決まるのはどこか。","o":["集めたデータの量","ダッシュボードの見やすさ","洞察が実際の行動につながること","使ったアルゴリズムの新しさ"],"a":2,"exp":"どれだけ高度な分析でも、誰の行動も変えなければ価値は生まれません。入口（問い）と出口（行動）の設計が要です。"},
+        {"q":"次のうち、包含関係として正しいものはどれか。","o":["生成AI ⊃ 機械学習 ⊃ AI","機械学習 ⊃ 深層学習 ⊃ 生成AI","深層学習 ⊃ 機械学習","AIと機械学習は別の技術で重ならない"],"a":1,"exp":"AI ⊃ 機械学習 ⊃ 深層学習 ⊃ 生成AI の入れ子です。生成AIは深層学習の一種です。"},
+        {"q":"「来月の売上は前年比5%減の見込み」は、どの段階の分析か。","o":["記述的分析","診断的分析","予測的分析","処方的分析"],"a":2,"exp":"まだ起きていない未来を見積もっているので予測的分析です。「では何をすべきか」まで示すと処方的分析になります。"},
+        {"q":"CRISP-DMの評価フェーズで「精度は高いが、業務の目標は満たせない」とわかった。次に取るべき行動は？","o":["精度をさらに上げる","ビジネス理解に戻り、問いや目標を見直す","そのまま展開する","とにかくデータを増やす"],"a":1,"exp":"精度が高くても目的に合わなければ使えません。問いの立て方や成功基準に戻るのが正しい動きです。"}
+      ]</script></div>
+    </section>
+    <nav class="pager" data-pager="m1" aria-label="モジュールの移動"></nav>
+  </div>
+</div>
+</main>
+<div data-site-footer></div>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/curriculum.js"></script>
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/viz-foundations.js"></script>
+<script src="../assets/js/viz-ml.js"></script>
+<script src="../assets/js/viz-business.js"></script>
+</body>
+</html>

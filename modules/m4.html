@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>機械学習のしくみ｜データサイエンス方眼帳</title>
+<meta name="ds-root" content="../">
+<meta name="ds-page" content="modules">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+<section class="mod-hero">
+  <div class="wrap mod-hero__grid">
+    <div class="mod-hero__no" aria-hidden="true">4</div>
+    <div>
+      <p class="mod-hero__crumb"><a href="../index.html#roadmap">学習ロードマップ</a><span>/</span><span>モジュール4</span></p>
+      <h1>機械学習のしくみ</h1>
+      <p class="lead">機械学習は魔法ではなく、データからパターンを学ぶ統計的な道具です。何ができて、何が苦手で、どう評価するのか。データサイエンティストと対等に話すための基礎を固めます。</p>
+      <div class="mod-hero__facts">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>7レッスン</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約50分</span>
+      </div>
+      <div class="outcomes">
+        <h2>このモジュールでできるようになること</h2>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>機械学習が向く問題と向かない問題を見分けられる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>教師あり・教師なし・強化学習の違いと使いどころを説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>過学習の兆候に気づき、的確な質問ができる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>適合率と再現率で、ビジネスに合った評価ができる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>手法の選択を、精度と説明しやすさのトレードオフで語れる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap mod-layout">
+  <nav class="toc" data-toc aria-label="目次"></nav>
+  <div>
+
+    <section class="lesson" id="l4-1" data-lesson="4-1" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">4-1</span><h2>ルールを書くか、データから学ぶか</h2></div>
+      <p class="lesson__key"><span>人がルールを書く代わりに、正解つきのデータからルールを学ばせるのが機械学習。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>従来のプログラムは、人が書いたルールにデータを通して答えを出します。機械学習は逆に、データと答え（正解）からルール（<span class="term">モデル</span>）を学びます。</p>
+          <p>迷惑メールの判定を人がルールで書こうとすると、例外が次々に出てきます。機械学習なら、過去のメールと「迷惑か正常か」の正解から、判定のしかたを自動で見つけます。</p>
+          <p>機械学習が向くのは、①ルールを書き切れない ②大量のデータと正解がある ③多少の誤りが許される、という問題です。明確なルールで書ける問題や、誤りが許されない判断には向きません。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>「AIで自動化したい」と言われたら、<b>まずルールで書けないか</b>を考える。単純なルールで8割解けるなら、そのほうが安くて説明もしやすい。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="rules-vs-ml" data-title="従来のプログラムと機械学習" data-icon="code"></figure>
+    </section>
+
+    <section class="lesson" id="l4-2" data-lesson="4-2" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">4-2</span><h2>3つの学び方</h2></div>
+      <p class="lesson__key"><span>正解を教えるか、教えないか、報酬で導くか。企業のAI活用の中心は教師あり学習。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p><strong>教師あり学習</strong>は、正解ラベル付きのデータから学びます。需要予測や解約予測など、ビジネスの予測問題の大半はこれです。</p>
+          <p><strong>教師なし学習</strong>は、正解なしでデータの中のまとまりや異常を見つけます。顧客セグメンテーションが代表例です。</p>
+          <p><strong>強化学習</strong>は、試行錯誤しながら報酬が最大になる行動を学びます。ゲームやロボット、生成AIを人の好みに合わせる調整に使われます。ボタンで3つを切り替えてみてください。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>教師あり学習を提案するときは、<b>「正解データは誰がどう付けたのか」</b>を確認。過去の担当者の判断が正解になっていると、その癖まで学ぶ。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="learning-types" data-title="3つの学び方" data-icon="brain"></figure>
+    </section>
+
+    <section class="lesson" id="l4-3" data-lesson="4-3" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">4-3</span><h2>回帰と分類</h2></div>
+      <p class="lesson__key"><span>数値を当てるのが回帰、グループを当てるのが分類。予測問題はほぼこの2つに分かれる。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p><strong>回帰</strong>は、来月の売上や明日の来客数など、数値を予測します。図では、気温からビールの販売数を予測する線を学習します。</p>
+          <p><strong>分類</strong>は、解約する／しない、不正／正常など、どのグループに入るかを予測します。実務では「解約確率72%」のように確率で出すことが多いです。</p>
+          <p>どちらで解くかで、必要なデータも評価のしかたも変わります。「売上を上げたい」を「どの顧客が離れそうか（分類）」に言い換えるのが、コンサルの翻訳の仕事です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>予測を使う人に<b>「数字そのものが欲しいのか、対象のリストが欲しいのか」</b>を聞くと、回帰か分類かが決まる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="reg-class" data-title="回帰と分類" data-icon="chart-line"></figure>
+    </section>
+
+    <section class="lesson" id="l4-4" data-lesson="4-4" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">4-4</span><h2>クラスタリング</h2></div>
+      <p class="lesson__key"><span>正解がなくても、似たもの同士をまとめられる。まとまりに意味をつけるのは人。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>クラスタリングは教師なし学習の代表です。よく使われる<span class="term">k-means法</span>は、①中心点を置く ②各点を一番近い中心に割り当てる ③中心をグループの重心に動かす、を繰り返します。</p>
+          <p>図で「初期化」と「1ステップ」を交互に押し、中心（★）が動く様子を見てください。</p>
+          <p>グループの数（k）は人が決めます。結果のグループが施策として意味を持つか、名前をつけて説明できるかも、人の判断です。アルゴリズムは「似ている」としか教えてくれません。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>セグメンテーションの結果は<b>「グループごとに打つ施策が違うか」</b>で評価する。施策が同じなら、分ける意味はない。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="kmeans" data-title="顧客を3つのグループに分ける（k-means法）" data-icon="cluster"></figure>
+    </section>
+
+    <section class="lesson" id="l4-5" data-lesson="4-5" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">4-5</span><h2>過学習：覚えすぎたモデル</h2></div>
+      <p class="lesson__key"><span>学習データにぴったりのモデルは、新しいデータで外れる。評価は見たことのないデータで行う。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>モデルを複雑にするほど、学習データにはよく当てはまります。しかし複雑すぎると、データの偶然のゆらぎまで覚えてしまい、新しいデータで外れます。これが<strong>過学習</strong>です。</p>
+          <p>スライダーでモデルの複雑さを変えてみてください。学習誤差（青）は下がり続けますが、テスト誤差（赤）はある所から上がり始めます。</p>
+          <p>だから評価には、学習に使っていない<strong>テストデータ</strong>を使います。時系列のデータなら、過去で学習して未来で試します。</p>
+          <p>「精度99%」という報告はまず疑います。テストデータで測ったか、予測の時点では知りえない情報が学習に混ざっていないか（<span class="term">データリーク</span>）を確かめます。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>PoCの報告会で聞く質問は2つ。<b>「その精度はどのデータで測りましたか？」「本番と同じ条件ですか？」</b></p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="overfit" data-title="モデルの複雑さと誤差" data-icon="gauge"></figure>
+    </section>
+
+    <section class="lesson" id="l4-6" data-lesson="4-6" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">4-6</span><h2>モデルの成績表：適合率と再現率</h2></div>
+      <p class="lesson__key"><span>珍しい事象を当てるモデルでは、正解率は役に立たない。見逃しと空振りのどちらが痛いかで決める。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>不正取引が全体の5%なら、「すべて正常」と答えるだけで正解率は95%になります。そこで、<strong>適合率</strong>（疑ったうち本当に不正だった割合）と<strong>再現率</strong>（不正のうち見つけられた割合）で評価します。この4マスの表を<span class="term">混同行列</span>と呼びます。</p>
+          <p>2つはトレードオフです。しきい値を下げると見逃しは減りますが空振りが増え、上げるとその逆になります。スライダーで確かめてください。</p>
+          <p>病気の検査や不正検知では見逃しが痛い（再現率重視）。営業リストの絞り込みでは空振りが痛い（適合率重視）。<strong>どちらを重視するかはビジネスの判断</strong>で、データサイエンティストに丸投げするものではありません。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>しきい値の議論は、<b>「1件見逃すといくら損するか」「1件空振りするといくらかかるか」</b>を金額で並べると一気に進む。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="confusion" data-title="不正検知モデルの成績表" data-icon="target"></figure>
+    </section>
+
+    <section class="lesson" id="l4-7" data-lesson="4-7" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">4-7</span><h2>代表的な手法と説明しやすさ</h2></div>
+      <p class="lesson__key"><span>精度と説明しやすさはトレードオフ。用途に合わせて選ぶ。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>手法の名前を覚える必要はありませんが、「精度が出やすいか」と「判断の理由を説明しやすいか」の2軸で位置をつかんでおくと、議論についていけます。点をクリックすると説明が出ます。</p>
+          <p>表形式データの予測では<strong>勾配ブースティング</strong>が実務の定番です。画像・音声・文章では<strong>深層学習</strong>。説明責任が重い与信や公共分野では、あえて<strong>線形モデルや決定木</strong>を選ぶこともあります。</p>
+          <p>決定木は質問をたどるだけなので、予測の理由をそのまま説明できます。2つめの図で、会員ごとに分岐をたどってみてください。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>「一番精度の高い手法で」という依頼には、<b>「その予測を、誰に、どう説明する必要がありますか？」</b>と返す。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="algos" data-title="手法の地図：精度と説明しやすさ" data-icon="map"></figure>
+      <figure class="fig" data-widget="dtree" data-title="決定木で予測をたどる" data-icon="tree"></figure>
+    </section>
+
+    <section id="summary" data-toc-extra data-toc-title="まとめと確認テスト">
+      <div class="summary-box">
+        <h3>モジュール4のまとめ</h3>
+        <ul>
+          <li>機械学習は、正解つきデータからルールを学ぶ。正解データの質が成否を決める。</li>
+          <li>予測問題は回帰（数値）か分類（グループ）に翻訳する。</li>
+          <li>クラスタリングの結果に意味をつけるのは人。</li>
+          <li>精度は見たことのないデータで測る。高すぎる精度はまず疑う。</li>
+          <li>評価指標としきい値は、見逃しと空振りのコストで決める。</li>
+        </ul>
+      </div>
+      <h2 class="section__head" style="margin-top:40px;font-size:var(--step-2);font-weight:900">確認テスト</h2>
+      <div class="quiz" data-quiz="m4"><script type="application/json">[
+        {"q":"機械学習が最も向いている問題はどれか。","o":["消費税額の計算","法令で手順が決まった申請の受付","過去の大量の取引と不正の正解から、新しい不正の兆候を見つける","一度きりの経営判断"],"a":2,"exp":"ルールを書き切れず、大量のデータと正解がある問題が機械学習に向いています。明確なルールで書ける計算や手続きは、普通のプログラムのほうが確実です。"},
+        {"q":"学習データでの精度が99%、テストデータでの精度が70%だった。何が起きている可能性が高いか。","o":["学習不足","過学習","テストデータが多すぎる","完璧なモデルができた"],"a":1,"exp":"学習データを覚えすぎて、新しいデータに当てはまらない状態です。モデルを単純にする、データを増やすなどの対策をとります。"},
+        {"q":"不正が全体の1%しかない。「すべて正常」と答えるモデルの正解率はいくつか。","o":["1%","50%","99%","計算できない"],"a":2,"exp":"何も見つけていないのに正解率は99%。珍しい事象では、適合率と再現率で評価します。"},
+        {"q":"与信審査で、否決の理由を顧客に説明する必要がある。最初に検討すべき手法はどれか。","o":["深層学習","説明しやすい線形モデルや決定木","精度が最も高い手法なら何でもよい","強化学習"],"a":1,"exp":"説明責任が重い用途では、精度を多少犠牲にしても説明しやすい手法を選ぶことがあります。複雑な手法を使う場合は、説明のための補助手法を組み合わせます。"}
+      ]</script></div>
+    </section>
+    <nav class="pager" data-pager="m4" aria-label="モジュールの移動"></nav>
+  </div>
+</div>
+</main>
+<div data-site-footer></div>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/curriculum.js"></script>
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/viz-foundations.js"></script>
+<script src="../assets/js/viz-ml.js"></script>
+<script src="../assets/js/viz-business.js"></script>
+</body>
+</html>
