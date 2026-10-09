@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>プロジェクトを動かす｜データサイエンス方眼帳</title>
+<meta name="ds-root" content="../">
+<meta name="ds-page" content="modules">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+<section class="mod-hero">
+  <div class="wrap mod-hero__grid">
+    <div class="mod-hero__no" aria-hidden="true">7</div>
+    <div>
+      <p class="mod-hero__crumb"><a href="../index.html#roadmap">学習ロードマップ</a><span>/</span><span>モジュール7</span></p>
+      <h1>プロジェクトを動かす</h1>
+      <p class="lead">データ・AIプロジェクトでコンサルが最も価値を出すのは、課題を分析課題に翻訳し、人と工程をつなぎ、運用まで届ける役割です。現場で使える型を学びます。</p>
+      <div class="mod-hero__facts">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>5レッスン</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約40分</span>
+      </div>
+      <div class="outcomes">
+        <h2>このモジュールでできるようになること</h2>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>ビジネス課題を分析課題まで一段ずつ具体化できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>フェーズごとの成果物と判断ゲートを設計できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>チームの役割を理解し、欠けている役割に気づける</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>運用（MLOps）の必要性を説明し、計画に織り込める</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>キックオフで聞くべき質問を漏れなく聞ける</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap mod-layout">
+  <nav class="toc" data-toc aria-label="目次"></nav>
+  <div>
+
+    <section class="lesson" id="l7-1" data-lesson="7-1" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">7-1</span><h2>ビジネス課題を分析課題に翻訳する</h2></div>
+      <p class="lesson__key"><span>「AIで何かやりたい」を、誰が何を決めるために、何を予測する分析なのかまで具体化する。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>マッキンゼーは2018年、ビジネスとデータの専門家をつなぐ<strong>アナリティクス・トランスレーター</strong>を「新たに必須の役割」と呼びました。IPAの調査でも、日本企業で最も不足しているDX人材は、ビジネスとデジタルをつなぐ<strong>ビジネスアーキテクト</strong>でした。</p>
+          <p>翻訳とは、ビジネス課題→問い→仮説→分析課題→必要なデータ→アウトプット→アクションと、一段ずつ具体化していく作業です。図で良い例と失敗例を比べてください。</p>
+          <p>最後の「アクション」が書けない分析は、始めてはいけません。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>翻訳の結果は<b>1枚の紙にまとめ、業務側とデータ側の両方に合意してもらう</b>。これがプロジェクトの拠り所になる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="translate" data-title="課題を分析課題に翻訳する" data-icon="link"></figure>
+    </section>
+
+    <section class="lesson" id="l7-2" data-lesson="7-2" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">7-2</span><h2>構想からPoC・本番・運用まで</h2></div>
+      <p class="lesson__key"><span>フェーズごとに判断ゲートを置き、進むか止めるかを事前の基準で決める。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>データ・AIプロジェクトは、構想→PoC→本番開発→運用・改善と進みます。右に行くほど費用と時間がかかります。図の箱とひし形をクリックしてください。</p>
+          <p>フェーズの間に<strong>判断ゲート</strong>を置き、事前に決めた基準で進むか止めるかを決めます。止める判断も成果の一つです。</p>
+          <p>本番開発はPoCの数倍の工数がかかるのが普通です。データの自動更新、システム連携、権限、監視の仕組みが必要になるためです。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>ゲートの基準は<b>PoCを始める前に</b>書いておく。結果が出てから基準を決めると、たいてい「もう少し続けよう」になる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="timeline" data-title="フェーズと判断ゲート" data-icon="calendar"></figure>
+    </section>
+
+    <section class="lesson" id="l7-3" data-lesson="7-3" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">7-3</span><h2>チームと役割</h2></div>
+      <p class="lesson__key"><span>AIプロジェクトはデータサイエンティストだけでは回らない。欠けている役割に気づき、埋めるのがコンサルの仕事。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>必要な役割は、ビジネスオーナー、現場の担当者、トランスレーター、データサイエンティスト、データエンジニア、MLエンジニア、法務・リスク管理など。図の役割をクリックしてください。</p>
+          <p>1人が複数の役割を兼ねても構いませんが、<strong>誰も担っていない役割</strong>があると、そこで止まります。特にビジネスオーナーと運用の担当者は抜けやすい役割です。</p>
+          <p>コンサルは多くの場合トランスレーター／PMを担います。専門家への敬意と、専門外のことでも遠慮せず質問する姿勢の両方が要ります。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>キックオフで<b>役割分担表</b>をつくり、空欄を全員で確認する。空欄の役割はリスクとして記録する。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="roles" data-title="プロジェクトの役割" data-icon="team"></figure>
+    </section>
+
+    <section class="lesson" id="l7-4" data-lesson="7-4" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">7-4</span><h2>モデルは古くなる：運用とMLOps</h2></div>
+      <p class="lesson__key"><span>世の中が変われば、モデルは当たらなくなる。監視と再学習の仕組みまでがプロジェクト。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>機械学習のモデルは、過去のデータのパターンを学んでいます。競合の動き、顧客の行動、制度が変われば、予測は外れ始めます。これを<span class="term">ドリフト</span>と呼びます。</p>
+          <p>図で「監視あり」と「監視なし」を比べてください。精度を監視し、基準を下回ったら再学習する仕組みがないと、誰も気づかないまま劣化します。</p>
+          <p>モデルの開発・展開・監視・再学習を継続的に回すしくみを<span class="term">MLOps</span>と呼びます。生成AIの場合も、回答品質の監視や、プロンプトと参照文書の更新が必要です。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>引き渡しのときに<b>「精度が何%を切ったら、誰が、何をするか」</b>を文書にして渡す。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="drift" data-title="モデルの劣化と再学習" data-icon="trend-down"></figure>
+    </section>
+
+    <section class="lesson" id="l7-5" data-lesson="7-5" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">7-5</span><h2>キックオフで聞くべき質問</h2></div>
+      <p class="lesson__key"><span>最初の会議で聞くべきことを聞けば、失敗の多くは防げる。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>失敗の多くは、最初に確認すべきことを確認しなかったことから始まります。目的・データ・体制・運用・リスクの5つの観点で質問を用意します。</p>
+          <p>下のチェックリストは、実際のキックオフで使える形にしています。答えが確認できたものにチェックを入れてください（このブラウザに保存されます）。</p>
+          <p>答えられない質問があるのは失敗ではありません。<strong>答えられないことがわかった</strong>のが成果で、計画上のリスクとして明記します。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>質問は相手を試すためでなく、<b>一緒に穴を見つけるため</b>に聞く。「ここは一緒に確認しましょう」と言えば角が立たない。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="checklist" data-title="キックオフの質問リスト" data-icon="clipboard"></figure>
+    </section>
+
+    <section id="summary" data-toc-extra data-toc-title="まとめと確認テスト">
+      <div class="summary-box">
+        <h3>モジュール7のまとめ</h3>
+        <ul>
+          <li>課題は一段ずつ翻訳する。アクションが書けない分析は始めない。</li>
+          <li>判断ゲートの基準は先に決める。止めるのも成果。</li>
+          <li>空いている役割が、プロジェクトが止まる場所。</li>
+          <li>モデルは古くなる。監視と再学習の担当まで決めて引き渡す。</li>
+        </ul>
+      </div>
+      <h2 class="section__head" style="margin-top:40px;font-size:var(--step-2);font-weight:900">確認テスト</h2>
+      <div class="quiz" data-quiz="m7"><script type="application/json">[
+        {"q":"分析を始める前に必ず具体化すべきなのはどれか。","o":["使うアルゴリズム","分析結果をもとに、誰が何をするか（アクション）","ダッシュボードの配色","データの保存形式"],"a":1,"exp":"アクションが決まっていない分析は、誰の行動も変えません。翻訳の最後の段から逆算して確かめます。"},
+        {"q":"PoCの判断ゲートの基準を決めるべきタイミングはいつか。","o":["PoCの結果が出た後","PoCを始める前","本番化した後","決めなくてよい"],"a":1,"exp":"結果を見てから基準を決めると、都合のよい解釈に流されます。"},
+        {"q":"本番稼働から1年、予測が外れることが増えた。最も可能性の高い原因と対応はどれか。","o":["サーバーの故障。機器を交換する","環境の変化によるドリフト。精度を監視し、新しいデータで再学習する","利用者の誤操作。研修を行う","モデルが古いので、別の手法に作り直す"],"a":1,"exp":"モデルは過去のパターンを学んでいるため、環境が変わると当たらなくなります。監視と再学習の仕組みが必要です。"},
+        {"q":"プロジェクトで抜けやすく、抜けると止まりやすい役割はどれか。","o":["データサイエンティスト","ビジネスオーナーと運用の担当者","発表者","議事録の担当"],"a":1,"exp":"意思決定する人と、使い続ける仕組みを担う人がいないと、成果まで届きません。"}
+      ]</script></div>
+    </section>
+    <nav class="pager" data-pager="m7" aria-label="モジュールの移動"></nav>
+  </div>
+</div>
+</main>
+<div data-site-footer></div>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/curriculum.js"></script>
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/viz-foundations.js"></script>
+<script src="../assets/js/viz-ml.js"></script>
+<script src="../assets/js/viz-business.js"></script>
+</body>
+</html>

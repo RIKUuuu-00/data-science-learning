@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>データを理解する｜データサイエンス方眼帳</title>
+<meta name="ds-root" content="../">
+<meta name="ds-page" content="modules">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div data-site-header></div>
+<main id="main">
+
+<section class="mod-hero">
+  <div class="wrap mod-hero__grid">
+    <div class="mod-hero__no" aria-hidden="true">2</div>
+    <div>
+      <p class="mod-hero__crumb"><a href="../index.html#roadmap">学習ロードマップ</a><span>/</span><span>モジュール2</span></p>
+      <h1>データを理解する</h1>
+      <p class="lead">分析の質は、データの質を超えられません。どんなデータがあり、どこに眠っていて、どんな状態なのか。分析に入る前に確かめるべきことを学びます。</p>
+      <div class="mod-hero__facts">
+        <span><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>5レッスン</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>約40分</span>
+      </div>
+      <div class="outcomes">
+        <h2>このモジュールでできるようになること</h2>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>データの種類を見分け、扱い方の違いを説明できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>データの性質に合った集計方法を選べる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>データ品質の問題に気づき、直し方を関係者と決められる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>データ基盤の全体像をつかみ、IT部門と会話できる</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>伝えたいことに合ったグラフを選べる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap mod-layout">
+  <nav class="toc" data-toc aria-label="目次"></nav>
+  <div>
+
+    <section class="lesson" id="l2-1" data-lesson="2-1" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">2-1</span><h2>データの種類：構造化と非構造化</h2></div>
+      <p class="lesson__key"><span>表になっているデータは一部にすぎない。文章・画像・音声も、いまはAIで分析できる。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p><strong>構造化データ</strong>は、行と列の表に収まるデータです。売上明細や顧客マスタのように、集計や機械学習にそのまま使いやすい形をしています。</p>
+          <p><strong>半構造化データ</strong>は、JSONやログのように項目名やタグは付いているものの、表の形にはなっていないデータです。少し加工すれば表にできます。</p>
+          <p><strong>非構造化データ</strong>は、メール、契約書、画像、音声など。企業が持つデータの大半を占めるとされ、これまでは人が読むしかありませんでした。生成AIの登場で、要約・分類・抽出が現実的な選択肢になっています。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>データの棚卸しでは表データだけでなく、<b>問い合わせメール、日報、議事録</b>の所在も聞く。生成AIの時代には、そこに一番の宝が眠っていることがある。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="data-types" data-title="データを種類別に仕分ける" data-icon="layers"></figure>
+    </section>
+
+    <section class="lesson" id="l2-2" data-lesson="2-2" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">2-2</span><h2>量的データと質的データ</h2></div>
+      <p class="lesson__key"><span>数字で書かれていても、計算してよいとは限らない。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>データには、数の大きさに意味がある<strong>量的データ</strong>（売上、年齢）と、区分を表す<strong>質的データ</strong>（性別、会員ランク）があります。</p>
+          <p>さらに細かく4つの尺度に分かれ、尺度によって使える計算と代表値が決まります。満足度の5段階評価を平均するのはよく見る方法ですが、厳密には「段階の間隔が等しい」という仮定を置いています。</p>
+          <p>顧客IDや郵便番号のように、数字でも計算に意味がない項目はたくさんあります。システム上の項目の型ではなく、<strong>何を表しているか</strong>で判断します。下の質問を押すと、該当する行が光ります。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>「満足度の平均が3.8から4.0に改善」という報告は、<b>4と5をつけた人の割合</b>でも見せると誤解が少ない。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="scales" data-title="4つの尺度と、できる計算" data-icon="ruler"></figure>
+    </section>
+
+    <section class="lesson" id="l2-3" data-lesson="2-3" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">2-3</span><h2>データの質と前処理</h2></div>
+      <p class="lesson__key"><span>汚れたデータからは、汚れた結論しか出てこない。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>英語では Garbage In, Garbage Out（ゴミを入れればゴミが出る）と言います。実務のデータには、表記ゆれ、欠損、重複、異常値、単位の違いがほぼ必ずあります。下の図で、ありがちな問題を探して直してみてください。</p>
+          <p>この作業を<span class="term">前処理</span>（データクレンジング）と呼び、分析時間の大きな部分を占めます。Anacondaが2020年に約2,400人を対象に行った調査では、データの読み込みとクレンジングだけで作業時間の約45%を占めました。</p>
+          <p>直し方の多くは<strong>業務上の判断</strong>です。欠損を平均で埋めるか除外するか、異常値は誤入力か本物か。データサイエンティストに任せきりにせず、業務を知る人と決めて、その判断を記録に残します。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>見積もりの段階で「データはきれいです」と言われても信じない。<b>最初の2週間はデータを見る期間</b>として計画に入れておく。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="dirty-data" data-title="顧客データの問題を探して直す" data-icon="wrench"></figure>
+    </section>
+
+    <section class="lesson" id="l2-4" data-lesson="2-4" data-level="2">
+      <div class="lesson__head"><span class="lesson__no">2-4</span><h2>データはどこにあるか：データ基盤</h2></div>
+      <p class="lesson__key"><span>データは部門ごとのシステムに散らばっている。集めて整える仕組みがなければ、分析もAIも続かない。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>業務システム（POS、EC、CRM、センサーなど）で生まれたデータは、<span class="term">ETL / ELT</span>と呼ばれる処理で集められ、生のまま貯める<strong>データレイク</strong>や、整えて貯める<strong>DWH（データウェアハウス）</strong>に蓄積されます。</p>
+          <p>そこからBIで見える化し、機械学習で予測し、生成AIで文書を検索・要約します。どの活用も、土台のデータ基盤に依存しています。図の箱をクリックすると説明が出ます。</p>
+          <p>部門ごとにデータが分断され、顧客IDがつながらない状態を<strong>サイロ化</strong>と呼びます。多くのAI構想は、この問題で足踏みします。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>基盤の話になったら<b>「顧客IDは部門をまたいでつながりますか？」</b>と聞く。答えが曖昧なら、顧客軸の分析はまずそこから。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="platform" data-title="データの流れと基盤" data-icon="layers"></figure>
+    </section>
+
+    <section class="lesson" id="l2-5" data-lesson="2-5" data-level="1">
+      <div class="lesson__head"><span class="lesson__no">2-5</span><h2>目的に合ったグラフを選ぶ</h2></div>
+      <p class="lesson__key"><span>グラフは「何を伝えたいか」で選ぶ。比較なら棒、推移なら折れ線、関係なら散布図。</span></p>
+      <div class="lesson__body">
+        <div class="prose">
+          <p>コンサルにとって、可視化は成果物そのものです。分析が正しくても、伝わらなければ意思決定は動きません。</p>
+          <p>伝えたいことは、比較・推移・構成・分布・関係のほぼ5種類に分けられます。ボタンを押して、グラフの形と使い分けを確かめてください。</p>
+          <p>1枚のグラフで伝えるメッセージは1つ。強調したい部分だけに色をつけ、残りはグレーにすると、AIが作ったグラフも見違えます。</p>
+        </div>
+        <aside class="memo">
+          <span class="memo__head"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>現場メモ</span>
+          <p>生成AIにグラフを作らせるときは、<b>「何を一番伝えたいか」を一文で指示</b>する。指示がないと、全部の系列に色がついた読めないグラフが出てくる。</p>
+        </aside>
+      </div>
+      <figure class="fig" data-widget="chart-chooser" data-title="伝えたいことからグラフを選ぶ" data-icon="chart-bar"></figure>
+    </section>
+
+    <section id="summary" data-toc-extra data-toc-title="まとめと確認テスト">
+      <div class="summary-box">
+        <h3>モジュール2のまとめ</h3>
+        <ul>
+          <li>非構造化データは企業データの大半。生成AIで活用の幅が広がった。</li>
+          <li>数字でも計算に意味があるとは限らない。何を表すかで扱いを決める。</li>
+          <li>データの直し方は業務上の判断。決めて、記録に残す。</li>
+          <li>分析もAIもデータ基盤の上に立つ。サイロ化が最初の壁になりやすい。</li>
+          <li>グラフは伝えたいことで選び、1枚に1メッセージ。</li>
+        </ul>
+      </div>
+      <h2 class="section__head" style="margin-top:40px;font-size:var(--step-2);font-weight:900">確認テスト</h2>
+      <div class="quiz" data-quiz="m2"><script type="application/json">[
+        {"q":"次のうち、非構造化データはどれか。","o":["売上明細","顧客マスタ","コールセンターの通話音声","在庫数の一覧表"],"a":2,"exp":"音声・画像・文章は非構造化データです。生成AIや音声認識で、要約や分類ができるようになりました。"},
+        {"q":"資料に「顧客IDの平均値」が載っていた。正しい指摘はどれか。","o":["小数点以下を四捨五入すべき","顧客IDは区分を表す名義尺度なので、平均には意味がない","中央値で示すべき","合計値を示すべき"],"a":1,"exp":"顧客IDは数字でも名義尺度です。平均・中央値・合計のいずれにも意味はありません。"},
+        {"q":"年齢の欄に「250」が入っていた。最も適切な対応はどれか。","o":["自動で削除する","全体の平均値で置き換える","業務担当者と確認し、判断と理由を記録する","そのまま分析する"],"a":2,"exp":"誤入力か、別の意味を持つ値か（例：不明を表すコード）は業務を知る人にしかわかりません。判断を記録することで、後から検証できます。"},
+        {"q":"12か月の売上の推移を前年と比べたい。最も適したグラフはどれか。","o":["円グラフ","折れ線グラフ","散布図","3Dの棒グラフ"],"a":1,"exp":"時間の流れに沿った推移は折れ線グラフが基本です。前年を薄い色の線で重ねると比較しやすくなります。"}
+      ]</script></div>
+    </section>
+    <nav class="pager" data-pager="m2" aria-label="モジュールの移動"></nav>
+  </div>
+</div>
+</main>
+<div data-site-footer></div>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/curriculum.js"></script>
+<script src="../assets/js/core.js"></script>
+<script src="../assets/js/viz-foundations.js"></script>
+<script src="../assets/js/viz-ml.js"></script>
+<script src="../assets/js/viz-business.js"></script>
+</body>
+</html>
